@@ -1,6 +1,6 @@
 import React from 'react';
 import { SOUTIEN_SCOLAIRE_CONTENT } from '../constants';
-import { BookOpen, GraduationCap, Info } from 'lucide-react';
+import { BookOpen, GraduationCap, Info, FileText, Trophy, Target, Mail, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const SoutienScolaire: React.FC = () => {
@@ -11,6 +11,34 @@ export const SoutienScolaire: React.FC = () => {
         <p className="text-white/80 font-medium max-w-2xl">
           Tout ce qu'il faut savoir sur les programmes de l'IB (Baccalauréat International) pour réussir votre parcours à Alkawthar.
         </p>
+      </div>
+
+      {/* Contacts Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {SOUTIEN_SCOLAIRE_CONTENT.contacts.map((contact, idx) => (
+          <motion.div 
+            key={idx}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            className="bg-white p-6 rounded-2xl border border-border-base shadow-sm flex items-center gap-4"
+          >
+            <div className="w-12 h-12 bg-brand-primary/5 rounded-full flex items-center justify-center shrink-0">
+              <User className="w-6 h-6 text-brand-primary" />
+            </div>
+            <div className="flex-1">
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{contact.role}</div>
+              <div className="text-lg font-black text-brand-primary uppercase">{contact.name}</div>
+              <a 
+                href={`mailto:${contact.email}`}
+                className="flex items-center gap-2 text-xs font-bold text-brand-secondary hover:underline mt-1"
+              >
+                <Mail className="w-3 h-3" />
+                {contact.email}
+              </a>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -77,6 +105,39 @@ export const SoutienScolaire: React.FC = () => {
             </ul>
           </div>
         </motion.div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded-2xl border border-border-base shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <FileText className="w-5 h-5 text-brand-secondary" />
+            <h4 className="text-sm font-black text-brand-primary uppercase tracking-tight">Évaluation Interne (IA)</h4>
+          </div>
+          <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            Travaux réalisés en classe (essais, expériences, portfolios) notés par vos enseignants et modérés par l'IB. 
+            Ils comptent généralement pour 20% à 30% de la note finale.
+          </p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl border border-border-base shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <Trophy className="w-5 h-5 text-brand-primary" />
+            <h4 className="text-sm font-black text-brand-primary uppercase tracking-tight">Évaluation Externe (EA)</h4>
+          </div>
+          <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            Examens finaux écrits passés à la fin du programme DP2. Ils sont corrigés par des examinateurs externes de l'IB 
+            et constituent la majeure partie de votre score final.
+          </p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl border border-border-base shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <Target className="w-5 h-5 text-success" />
+            <h4 className="text-sm font-black text-brand-primary uppercase tracking-tight">Objectif Universitaire</h4>
+          </div>
+          <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            Les universités regardent souvent vos notes spécifiques en IA et EA dans les matières HL pour confirmer votre admission. 
+            Un score de 6 ou 7 est souvent requis pour les spécialités compétitives.
+          </p>
+        </div>
       </div>
 
       <div className="bg-slate-50 p-6 rounded-2xl border border-dashed border-slate-300 flex items-start gap-4">

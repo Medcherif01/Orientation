@@ -26,6 +26,8 @@ export interface UniversitySpecialty {
   recommendedSubjects: string[]; // Subject IDs
   requiredHL: string[]; // Subject IDs
   minScore: number;
+  iaEaClarification: string; // New field for IA/EA details
+  icon?: string; // Icon name from lucide
   description: string;
 }
 

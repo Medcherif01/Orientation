@@ -92,6 +92,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['bio', 'chem', 'math-aa'],
     requiredHL: ['chem', 'bio'],
     minScore: 38,
+    icon: 'Stethoscope',
+    iaEaClarification: 'IA (Évaluation Interne) : Minimum 6/7 en Biologie et Chimie. EA (Examens Finaux) : Score de 7 requis en HL Sciences.',
     description: 'Nécessite une base scientifique solide et un score global élevé.'
   },
   {
@@ -101,6 +103,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['phys', 'chem', 'math-aa'],
     requiredHL: ['math-aa', 'phys'],
     minScore: 36,
+    icon: 'Settings',
+    iaEaClarification: 'IA : 6/7 en Mathématiques AA HL. EA : Forte performance requise en Physique et Mathématiques (7/7 visé).',
     description: 'Accent sur le raisonnement mathématique et les lois physiques.'
   },
   {
@@ -110,6 +114,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['comp-sci', 'math-aa', 'phys'],
     requiredHL: ['math-aa', 'comp-sci'],
     minScore: 40,
+    icon: 'Code',
+    iaEaClarification: 'IA : Projet informatique (IA) noté 7/7. EA : Score parfait requis en Mathématiques HL.',
     description: 'Compétences logiques et mathématiques très élevées requises.'
   },
   {
@@ -119,6 +125,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['econ', 'bus-man', 'math-ai'],
     requiredHL: ['econ', 'math-ai'],
     minScore: 34,
+    icon: 'TrendingUp',
+    iaEaClarification: 'IA : Commentaire écrit en Économie (IA) 6/7. EA : Équilibre requis entre Mathématiques et Sciences Humaines.',
     description: 'Compréhension des marchés, de la gestion et de l\'analyse de données.'
   },
   {
@@ -128,6 +136,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['hist', 'fra-a-lit', 'psych'],
     requiredHL: ['fra-a-lit', 'hist'],
     minScore: 39,
+    icon: 'Scale',
+    iaEaClarification: 'IA : Analyse littéraire (IA) 7/7. EA : Score de 7 requis en Histoire HL et Français A.',
     description: 'Excellentes capacités d\'analyse et de communication.'
   },
   {
@@ -137,6 +147,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['vis-arts', 'phys', 'math-aa'],
     requiredHL: ['math-aa', 'vis-arts'],
     minScore: 37,
+    icon: 'Home',
+    iaEaClarification: 'IA : Portfolio Arts Visuels (IA) 6/7. EA : Très bon niveau en Mathématiques AA et Physique.',
     description: 'Mélange de créativité artistique et de rigueur technique.'
   },
   {
@@ -146,6 +158,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['global-pol', 'hist', 'econ'],
     requiredHL: ['global-pol', 'econ'],
     minScore: 35,
+    icon: 'Globe',
+    iaEaClarification: 'IA : Engagement politique (IA) 6/7. EA : Score de 6 minimum en Global Politics HL.',
     description: 'Étude des enjeux mondiaux, de la politique et de l\'économie.'
   },
   {
@@ -155,6 +169,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['bio', 'chem', 'comp-sci'],
     requiredHL: ['bio', 'chem'],
     minScore: 36,
+    icon: 'Dna',
+    iaEaClarification: 'IA : Investigation scientifique (IA) 6/7. EA : Score de 6 ou 7 en Biologie et Chimie HL.',
     description: 'Innovation dans les sciences de la vie et les technologies.'
   },
   {
@@ -164,6 +180,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['design-tech', 'phys', 'math-aa'],
     requiredHL: ['design-tech', 'math-aa'],
     minScore: 35,
+    icon: 'PenTool',
+    iaEaClarification: 'IA : Dossier de design (IA) 7/7. EA : Score de 6 en Mathématiques AA HL.',
     description: 'Conception de solutions innovantes alliant forme et fonction.'
   },
   {
@@ -173,6 +191,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['psych', 'bio', 'fra-a-lit'],
     requiredHL: ['psych', 'fra-a-lit'],
     minScore: 33,
+    icon: 'Brain',
+    iaEaClarification: 'IA : Étude expérimentale (IA) 6/7. EA : Score de 6 en Psychologie HL.',
     description: 'Étude du comportement humain et des processus mentaux.'
   },
   {
@@ -182,6 +202,8 @@ export const UNIVERSITY_SPECIALTIES: UniversitySpecialty[] = [
     recommendedSubjects: ['phys', 'math-aa', 'chem'],
     requiredHL: ['phys', 'math-aa'],
     minScore: 38,
+    icon: 'Atom',
+    iaEaClarification: 'IA : Investigation en Physique (IA) 7/7. EA : Score de 7 requis en Physique HL.',
     description: 'Exploration des lois fondamentales de la nature.'
   }
 ];
@@ -191,25 +213,36 @@ export const SOUTIEN_SCOLAIRE_CONTENT = {
     title: "Programme d'Éducation Intermédiaire (PEI / MYP)",
     description: "Le PEI est un cadre pédagogique rigoureux destiné aux élèves de 11 à 16 ans (PEI 1 à PEI 5). Il encourage les élèves à devenir des apprenants créatifs, critiques et réfléchis, capables d'établir des liens entre leurs études et le monde réel.",
     keyPoints: [
-      "8 groupes de matières : Langue et littérature, Acquisition de langues, Individus et sociétés, Sciences, Mathématiques, Arts, Éducation physique et à la santé, Design.",
-      "Contextes mondiaux : L'apprentissage est ancré dans des contextes réels (Identités et relations, Orientation dans l'espace et le temps, Expression personnelle et culturelle, Innovation scientifique et technique, Mondialisation et durabilité, Équité et développement).",
-      "Projet personnel : Un travail de recherche indépendant réalisé en PEI 5, démontrant les compétences d'autogestion, de recherche et de réflexion acquises durant le programme.",
-      "Compétences ATL (Approches de l'apprentissage) : Développement systématique de compétences essentielles : Pensée (critique et créative), Communication, Social (collaboration), Autogestion (organisation et affectivité) et Recherche.",
-      "Service en tant qu'action : Engagement communautaire obligatoire pour développer l'empathie, la responsabilité civique et la compréhension internationale.",
-      "Évaluation : Basée sur des critères de performance rigoureux, incluant des examens électroniques et des portfolios de travaux."
+      "8 groupes de matières : Un équilibre entre langues, sciences, mathématiques, arts, éducation physique et design.",
+      "Contextes mondiaux : L'apprentissage est ancré dans des contextes réels pour donner du sens aux études.",
+      "Projet personnel (PEI 5) : Un travail de recherche indépendant CRUCIAL pour l'orientation. Il démontre votre capacité à mener un projet de A à Z, une compétence très valorisée par les universités.",
+      "E-Assessment (PEI 5) : L'importance des examens électroniques en fin de PEI 5 pour valider vos acquis et préparer la rigueur du DP.",
+      "Compétences ATL : Apprendre à apprendre (pensée critique, recherche, communication).",
+      "Service en tant qu'action : Engagement communautaire pour développer l'empathie et la responsabilité."
     ]
   },
   dp: {
     title: "Programme du Diplôme (DP)",
-    description: "Le DP est un programme d'enseignement rigoureux et équilibré destiné aux élèves de 16 à 19 ans. Il est conçu pour préparer les élèves à réussir à l'université et dans leur vie future, tout en favorisant leur développement intellectuel, social et émotionnel.",
+    description: "Le DP est un programme d'enseignement rigoureux et équilibré destiné aux élèves de 16 à 19 ans. Il est conçu pour préparer les élèves à réussir à l'université et dans leur vie future.",
     keyPoints: [
-      "Structure des 6 groupes : Les élèves choisissent une matière dans chacun des 5 premiers groupes (Langues, Sciences Humaines, Sciences Expérimentales, Mathématiques), et une 6ème soit en Arts, soit une matière supplémentaire des groupes 1 à 5.",
-      "Niveaux HL et SL : 3 ou 4 matières au Niveau Supérieur (HL - 240h d'enseignement) et le reste au Niveau Moyen (SL - 150h d'enseignement).",
-      "Le Mémoire (EE) : Un travail de recherche autonome de 4 000 mots sur un sujet d'intérêt personnel, préparant aux exigences de la recherche universitaire.",
-      "Théorie de la Connaissance (TdC) : Un cours interdisciplinaire qui explore la nature de la connaissance et encourage la pensée critique sur ce que nous savons et comment nous le savons.",
-      "Créativité, Activité, Service (CAS) : Un programme parascolaire essentiel où les élèves s'engagent dans des projets créatifs, des activités physiques et des services à la communauté.",
-      "Évaluation : Un système d'évaluation internationalement reconnu combinant des examens finaux externes et des évaluations internes (IA) réalisées par les enseignants.",
-      "Profil de l'apprenant : Le programme vise à former des individus chercheurs, informés, sensés, communicateurs, intègres, ouverts d'esprit, altruistes, audacieux, équilibrés et réfléchis."
+      "Structure des 6 groupes : Choix de 6 matières (3 au Niveau Supérieur HL et 3 au Niveau Moyen SL).",
+      "Règle de remplacement : Si vous ne choisissez pas d'Arts (Groupe 6), vous devez choisir une 2ème matière en Groupe 3 (Individus et sociétés) ou Groupe 4 (Sciences).",
+      "Le Mémoire (EE) : Recherche autonome de 4 000 mots, excellente préparation à l'université.",
+      "Théorie de la Connaissance (TdC) : Réflexion critique sur la nature du savoir.",
+      "CAS (Créativité, Activité, Service) : Équilibre personnel à travers des projets concrets.",
+      "Évaluation : Mixte entre travaux internes (IA) et examens finaux (EA)."
     ]
-  }
+  },
+  contacts: [
+    {
+      role: "Conseillère de Soutien Scolaire",
+      name: "Zohra Zidane",
+      email: "zohrazidane@alkawthar.edu.sa"
+    },
+    {
+      role: "Conseiller d'Orientation Universitaire",
+      name: "Mohamed Cherif",
+      email: "mohamed_sherif@alkawthar.edu.sa"
+    }
+  ]
 };

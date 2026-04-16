@@ -3,7 +3,25 @@ import { GoogleGenAI } from "@google/genai";
 import { SelectedSubject, UniversitySpecialty } from '../types';
 import { SUBJECTS, UNIVERSITY_SPECIALTIES } from '../constants';
 import { cn } from '../lib/utils';
-import { Sparkles, GraduationCap, Globe, BookOpen, Loader2 } from 'lucide-react';
+import { 
+  Sparkles, 
+  GraduationCap, 
+  Globe, 
+  BookOpen, 
+  Loader2, 
+  Trophy, 
+  FileText,
+  Stethoscope,
+  Settings,
+  Code,
+  TrendingUp,
+  Scale,
+  Home,
+  Dna,
+  PenTool,
+  Brain,
+  Atom
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface UniversityOrientationProps {
@@ -11,6 +29,20 @@ interface UniversityOrientationProps {
   careerGoal: string;
   selectedSpecialtyId?: string;
 }
+
+const IconMap: Record<string, any> = {
+  Stethoscope,
+  Settings,
+  Code,
+  TrendingUp,
+  Scale,
+  Home,
+  Globe,
+  Dna,
+  PenTool,
+  Brain,
+  Atom
+};
 
 export const UniversityOrientation: React.FC<UniversityOrientationProps> = ({ selectedSubjects, careerGoal, selectedSpecialtyId }) => {
   const [aiAdvice, setAiAdvice] = useState<string | null>(null);
@@ -74,12 +106,30 @@ export const UniversityOrientation: React.FC<UniversityOrientationProps> = ({ se
           </div>
           <div className="space-y-4">
             {profileSpecialty && (
-              <div className="p-4 rounded-lg bg-brand-primary/10 border-2 border-brand-primary shadow-sm">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-black text-brand-primary uppercase text-sm">{profileSpecialty.name} (VOTRE CHOIX)</h4>
+              <div className="p-4 rounded-lg bg-brand-primary/10 border-2 border-brand-primary shadow-sm space-y-3">
+                <div className="flex justify-between items-start">
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-brand-primary text-white rounded-lg">
+                      {profileSpecialty.icon && IconMap[profileSpecialty.icon] ? (
+                        React.createElement(IconMap[profileSpecialty.icon], { className: "w-4 h-4" })
+                      ) : (
+                        <GraduationCap className="w-4 h-4" />
+                      )}
+                    </div>
+                    <h4 className="font-black text-brand-primary uppercase text-sm">{profileSpecialty.name}</h4>
+                  </div>
                   <span className="font-mono text-brand-secondary font-bold text-lg">{profileSpecialty.minScore} pts</span>
                 </div>
-                <p className="text-[10px] text-slate-600 font-bold uppercase mb-2">{profileSpecialty.description}</p>
+                <p className="text-[10px] text-slate-600 font-bold uppercase">{profileSpecialty.description}</p>
+                
+                <div className="bg-white/50 p-3 rounded-lg border border-brand-primary/10">
+                  <div className="flex items-center gap-2 mb-1">
+                    <FileText className="w-3 h-3 text-brand-secondary" />
+                    <span className="text-[8px] font-bold uppercase text-slate-400 tracking-widest">Objectif IA/EA</span>
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-700 leading-tight">{profileSpecialty.iaEaClarification}</p>
+                </div>
+
                 <div className="flex flex-wrap gap-1">
                   {profileSpecialty.requiredHL.map(hlId => {
                     const sub = SUBJECTS.find(s => s.id === hlId);
@@ -94,12 +144,30 @@ export const UniversityOrientation: React.FC<UniversityOrientationProps> = ({ se
             )}
             {otherMatchingSpecialties.length > 0 ? (
               otherMatchingSpecialties.map(spec => (
-                <div key={spec.id} className="p-4 rounded-lg bg-slate-50 border border-border-base opacity-70">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="font-bold text-brand-primary uppercase text-sm">{spec.name}</h4>
+                <div key={spec.id} className="p-4 rounded-lg bg-slate-50 border border-border-base opacity-70 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 bg-slate-200 text-slate-500 rounded-lg">
+                        {spec.icon && IconMap[spec.icon] ? (
+                          React.createElement(IconMap[spec.icon], { className: "w-4 h-4" })
+                        ) : (
+                          <GraduationCap className="w-4 h-4" />
+                        )}
+                      </div>
+                      <h4 className="font-bold text-brand-primary uppercase text-sm">{spec.name}</h4>
+                    </div>
                     <span className="font-mono text-brand-secondary font-bold text-lg">{spec.minScore} pts</span>
                   </div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase mb-2">{spec.description}</p>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase">{spec.description}</p>
+                  
+                  <div className="bg-white/50 p-2 rounded-lg border border-slate-200">
+                    <div className="flex items-center gap-2 mb-1">
+                      <FileText className="w-3 h-3 text-slate-400" />
+                      <span className="text-[8px] font-bold uppercase text-slate-400 tracking-widest">Objectif IA/EA</span>
+                    </div>
+                    <p className="text-[9px] font-bold text-slate-500 leading-tight">{spec.iaEaClarification}</p>
+                  </div>
+
                   <div className="flex flex-wrap gap-1">
                     {spec.requiredHL.map(hlId => {
                       const sub = SUBJECTS.find(s => s.id === hlId);
