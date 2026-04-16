@@ -99,9 +99,9 @@ export default function App() {
               >
                 <div className="w-32 h-32 bg-white rounded-full p-2 shadow-lg border-4 border-brand-primary flex items-center justify-center overflow-hidden">
                   <img 
-                    src="https://api.dicebear.com/7.x/initials/svg?seed=AK&backgroundColor=1a365d&textColor=ffffff" 
+                    src="https://lh3.googleusercontent.com/d/1gjzWKHQxmAjA7wWE_2Mv8TGfOdqiHLlp" 
                     alt="Logo Alkawthar" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -307,9 +307,9 @@ export default function App() {
                   </button>
                   <div className="w-12 h-12 bg-white rounded-full p-1 shadow-sm border-2 border-brand-primary flex items-center justify-center overflow-hidden">
                     <img 
-                      src="https://api.dicebear.com/7.x/initials/svg?seed=AK&backgroundColor=1a365d&textColor=ffffff" 
+                      src="https://lh3.googleusercontent.com/d/1gjzWKHQxmAjA7wWE_2Mv8TGfOdqiHLlp" 
                       alt="Logo Alkawthar" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
                     />
                   </div>
