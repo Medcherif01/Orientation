@@ -1,11 +1,40 @@
-<div align="center">
+# Alkawthar IB PathFinder
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Un système d'orientation intelligent conçu spécifiquement pour les élèves des **Écoles Internationales Alkawthar**. Cet outil aide les élèves de PEI5 et DP1 à choisir leurs matières du Baccalauréat International (IB) en fonction de leurs ambitions universitaires mondiales.
 
-  <h1>Built with AI Studio</h2>
+## 🚀 Fonctionnalités
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **Simulateur de Choix de Matières (IB Wizard)** : Validation stricte des règles de l'IB (6 groupes, HL/SL, remplacement du Groupe 6).
+- **Orientation Universitaire** : Base de données mondiale (France, UK, Canada, USA, Maroc, Suisse, Espagne, Belgique, Allemagne, Pays-Bas).
+- **IA Advisor** : Conseils personnalisés basés sur les matières choisies et les objectifs de carrière (via Google Gemini API).
+- **Soutien Scolaire** : Guide complet sur les programmes PEI (MYP) et DP.
+- **Design Moderne** : Interface "Bento Grid" responsive et élégante.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🛠️ Installation Locale
 
-</div>
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/votre-compte/alkawthar-ib-pathfinder.git
+   ```
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
+3. Créez un fichier `.env` à la racine et ajoutez votre clé API :
+   ```env
+   VITE_GEMINI_API_KEY=votre_cle_api
+   ```
+4. Lancez le projet :
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Déploiement sur Vercel
+
+Ce projet est optimisé pour Vercel. Lors du déploiement, n'oubliez pas d'ajouter la variable d'environnement `GEMINI_API_KEY` dans les paramètres de votre projet Vercel.
+
+## 🎓 À propos d'Alkawthar
+Les Écoles Internationales Alkawthar sont dédiées à l'excellence académique à travers les programmes de l'IB, préparant les élèves à devenir des citoyens du monde informés et responsables.
+
+---
+© 2024 Alkawthar International School - Service d'Orientation IB
