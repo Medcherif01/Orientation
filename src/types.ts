@@ -11,30 +11,43 @@ export interface IBSubject {
 export interface Country {
   id: string;
   name: string;
+  flag: string;
 }
 
 export interface University {
   id: string;
   name: string;
   countryId: string;
+  ranking?: number;
+}
+
+export interface SpecialtyDomain {
+  id: string;
+  name: string;
+  icon: string;
+  color: string;
 }
 
 export interface UniversitySpecialty {
   id: string;
   name: string;
+  domain: string; // domain id
   universityId: string;
-  recommendedSubjects: string[]; // Subject IDs
-  requiredHL: string[]; // Subject IDs
+  recommendedSubjects: string[];
+  requiredHL: string[];
   minScore: number;
-  iaEaClarification: string; // New field for IA/EA details
-  icon?: string; // Icon name from lucide
+  minScorePerHL?: number; // min score per HL subject
+  iaEaClarification: string;
+  icon?: string;
   description: string;
+  careerPaths?: string[];
 }
 
 export interface StudentProfile {
   grade: 'PEI5' | 'DP1';
   status: 'new' | 'current';
   careerGoal: string;
+  selectedDomain?: string;
   selectedCountryId?: string;
   selectedUniversityId?: string;
   selectedSpecialtyId?: string;
@@ -47,10 +60,10 @@ export interface SelectedSubject {
 }
 
 export const IB_GROUPS = [
-  { id: 1, name: "Group 1: Studies in Language and Literature" },
-  { id: 2, name: "Group 2: Language Acquisition" },
-  { id: 3, name: "Group 3: Individuals and Societies" },
-  { id: 4, name: "Group 4: Sciences" },
-  { id: 5, name: "Group 5: Mathematics" },
-  { id: 6, name: "Group 6: The Arts (or Elective)" },
+  { id: 1, name: 'Langue et Littérature', shortName: 'Groupe 1' },
+  { id: 2, name: 'Acquisition de Langues', shortName: 'Groupe 2' },
+  { id: 3, name: 'Individus et Sociétés', shortName: 'Groupe 3' },
+  { id: 4, name: 'Sciences', shortName: 'Groupe 4' },
+  { id: 5, name: 'Mathématiques', shortName: 'Groupe 5' },
+  { id: 6, name: 'Arts (ou Matière Optionnelle)', shortName: 'Groupe 6' },
 ];
